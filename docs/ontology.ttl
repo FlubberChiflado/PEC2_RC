@@ -1,0 +1,229 @@
+@prefix : <http://www.semanticweb.org/fcron/ontology/spanish_wine_quality#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/fcron/ontology/spanish_wine_quality#> .
+
+<http://www.semanticweb.org/fcron/ontology/spanish_wine_quality> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://dbpedia.org/data/Wine.json#rating
+<https://dbpedia.org/data/Wine.json#rating> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://dbpedia.org/data/Wine.json#Wine> ;
+                                            rdfs:range <https://dbpedia.org/data/Wine.json#Rating> .
+
+
+###  https://dbpedia.org/data/Wine.json#region
+<https://dbpedia.org/data/Wine.json#region> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://dbpedia.org/data/Wine.json#Wine> ;
+                                            rdfs:range <https://dbpedia.org/data/Wine.json#Region> .
+
+
+###  https://dbpedia.org/data/Wine.json#review
+<https://dbpedia.org/data/Wine.json#review> rdf:type owl:ObjectProperty .
+
+
+###  https://dbpedia.org/data/Wine.json#winery
+<https://dbpedia.org/data/Wine.json#winery> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://dbpedia.org/data/Wine.json#bodyScore
+<https://dbpedia.org/data/Wine.json#bodyScore> rdf:type owl:DatatypeProperty .
+
+
+###  https://dbpedia.org/data/Wine.json#countReview
+<https://dbpedia.org/data/Wine.json#countReview> rdf:type owl:DatatypeProperty .
+
+
+###  https://dbpedia.org/data/Wine.json#name
+<https://dbpedia.org/data/Wine.json#name> rdf:type owl:DatatypeProperty .
+
+
+###  https://dbpedia.org/data/Wine.json#price
+<https://dbpedia.org/data/Wine.json#price> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://dbpedia.org/data/Wine.json#Wine> ;
+                                           rdfs:range xsd:decimal .
+
+
+###  https://dbpedia.org/data/Wine.json#rating
+<https://dbpedia.org/data/Wine.json#rating> rdf:type owl:DatatypeProperty ;
+                                            rdfs:range xsd:decimal .
+
+
+###  https://dbpedia.org/data/Wine.json#year
+<https://dbpedia.org/data/Wine.json#year> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://dbpedia.org/data/Wine.json#HighQualityWine
+<https://dbpedia.org/data/Wine.json#HighQualityWine> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <https://dbpedia.org/data/Wine.json#WineType> ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <https://dbpedia.org/data/Wine.json#price> ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:minInclusive 400
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <https://dbpedia.org/data/Wine.json#rating> ;
+                                                                       owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                                                                       owl:onDataRange xsd:decimal
+                                                                     ] .
+
+
+###  https://dbpedia.org/data/Wine.json#LowQualityWine
+<https://dbpedia.org/data/Wine.json#LowQualityWine> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <https://dbpedia.org/data/Wine.json#WineType> ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <https://dbpedia.org/data/Wine.json#price> ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:maxExclusive 400
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <https://dbpedia.org/data/Wine.json#rating> ;
+                                                                      owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                                                                      owl:onDataRange xsd:decimal
+                                                                    ] .
+
+
+###  https://dbpedia.org/data/Wine.json#Rating
+<https://dbpedia.org/data/Wine.json#Rating> rdf:type owl:Class .
+
+
+###  https://dbpedia.org/data/Wine.json#Region
+<https://dbpedia.org/data/Wine.json#Region> rdf:type owl:Class .
+
+
+###  https://dbpedia.org/data/Wine.json#Review
+<https://dbpedia.org/data/Wine.json#Review> rdf:type owl:Class .
+
+
+###  https://dbpedia.org/data/Wine.json#Wine
+<https://dbpedia.org/data/Wine.json#Wine> rdf:type owl:Class ;
+                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://dbpedia.org/data/Wine.json#region> ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass <https://dbpedia.org/data/Wine.json#Region>
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://dbpedia.org/data/Wine.json#winery> ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass <https://dbpedia.org/data/Wine.json#Winery>
+                                                          ] .
+
+
+###  https://dbpedia.org/data/Wine.json#WineType
+<https://dbpedia.org/data/Wine.json#WineType> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://dbpedia.org/data/Wine.json#Wine> .
+
+
+###  https://dbpedia.org/data/Wine.json#Winery
+<https://dbpedia.org/data/Wine.json#Winery> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://dbpedia.org/data/Wine.json#Alvaro_Palacios
+<https://dbpedia.org/data/Wine.json#Alvaro_Palacios> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Castillo_Ygay_Gran_Reserva_Especial_Blanco
+<https://dbpedia.org/data/Wine.json#Castillo_Ygay_Gran_Reserva_Especial_Blanco> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Espana
+<https://dbpedia.org/data/Wine.json#Espana> rdf:type owl:NamedIndividual ,
+                                                     <https://dbpedia.org/data/Wine.json#Region> .
+
+
+###  https://dbpedia.org/data/Wine.json#Pingus
+<https://dbpedia.org/data/Wine.json#Pingus> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Priorat_Red
+<https://dbpedia.org/data/Wine.json#Priorat_Red> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Priorato
+<https://dbpedia.org/data/Wine.json#Priorato> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Ribera_Del_Duero_Red
+<https://dbpedia.org/data/Wine.json#Ribera_Del_Duero_Red> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Rioja
+<https://dbpedia.org/data/Wine.json#Rioja> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Toro_Red
+<https://dbpedia.org/data/Wine.json#Toro_Red> rdf:type owl:NamedIndividual ,
+                                                       <https://dbpedia.org/data/Wine.json#Winery> .
+
+
+###  https://dbpedia.org/data/Wine.json#Unico
+<https://dbpedia.org/data/Wine.json#Unico> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion
+<https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion> rdf:type owl:NamedIndividual ;
+                                                                    <https://dbpedia.org/data/Wine.json#region> <https://dbpedia.org/data/Wine.json#Espana> ;
+                                                                    <https://dbpedia.org/data/Wine.json#winery> <https://dbpedia.org/data/Wine.json#Toro_Red> ;
+                                                                    <https://dbpedia.org/data/Wine.json#price> 200 ;
+                                                                    <https://dbpedia.org/data/Wine.json#rating> 2 .
+
+
+###  https://dbpedia.org/data/Wine.json#Vega_Sicilia
+<https://dbpedia.org/data/Wine.json#Vega_Sicilia> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Vino_Tinto
+<https://dbpedia.org/data/Wine.json#Vino_Tinto> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#Vino_de_Espana
+<https://dbpedia.org/data/Wine.json#Vino_de_Espana> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#185
+<https://dbpedia.org/data/Wine.json#185> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#1982
+<https://dbpedia.org/data/Wine.json#1982> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#527.26
+<https://dbpedia.org/data/Wine.json#527.26> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat
+<https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat> rdf:type owl:NamedIndividual ;
+                                                                    <https://dbpedia.org/data/Wine.json#region> <https://dbpedia.org/data/Wine.json#Espana> ;
+                                                                    <https://dbpedia.org/data/Wine.json#winery> <https://dbpedia.org/data/Wine.json#Toro_Red> ;
+                                                                    <https://dbpedia.org/data/Wine.json#price> 450.0 ;
+                                                                    <https://dbpedia.org/data/Wine.json#rating> 5.0 .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

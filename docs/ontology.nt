@@ -1,0 +1,208 @@
+<http://www.semanticweb.org/fcron/ontology/spanish_wine_quality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://dbpedia.org/data/Wine.json#rating
+<https://dbpedia.org/data/Wine.json#rating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://dbpedia.org/data/Wine.json#rating> <http://www.w3.org/2000/01/rdf-schema#domain> <https://dbpedia.org/data/Wine.json#Wine> .
+<https://dbpedia.org/data/Wine.json#rating> <http://www.w3.org/2000/01/rdf-schema#range> <https://dbpedia.org/data/Wine.json#Rating> .
+# 
+# https://dbpedia.org/data/Wine.json#region
+<https://dbpedia.org/data/Wine.json#region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://dbpedia.org/data/Wine.json#region> <http://www.w3.org/2000/01/rdf-schema#domain> <https://dbpedia.org/data/Wine.json#Wine> .
+<https://dbpedia.org/data/Wine.json#region> <http://www.w3.org/2000/01/rdf-schema#range> <https://dbpedia.org/data/Wine.json#Region> .
+# 
+# https://dbpedia.org/data/Wine.json#review
+<https://dbpedia.org/data/Wine.json#review> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://dbpedia.org/data/Wine.json#winery
+<https://dbpedia.org/data/Wine.json#winery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://dbpedia.org/data/Wine.json#bodyScore
+<https://dbpedia.org/data/Wine.json#bodyScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://dbpedia.org/data/Wine.json#countReview
+<https://dbpedia.org/data/Wine.json#countReview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://dbpedia.org/data/Wine.json#name
+<https://dbpedia.org/data/Wine.json#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://dbpedia.org/data/Wine.json#price
+<https://dbpedia.org/data/Wine.json#price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://dbpedia.org/data/Wine.json#price> <http://www.w3.org/2000/01/rdf-schema#domain> <https://dbpedia.org/data/Wine.json#Wine> .
+<https://dbpedia.org/data/Wine.json#price> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://dbpedia.org/data/Wine.json#rating
+<https://dbpedia.org/data/Wine.json#rating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://dbpedia.org/data/Wine.json#rating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://dbpedia.org/data/Wine.json#year
+<https://dbpedia.org/data/Wine.json#year> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://dbpedia.org/data/Wine.json#HighQualityWine
+<https://dbpedia.org/data/Wine.json#HighQualityWine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://dbpedia.org/data/Wine.json#HighQualityWine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://dbpedia.org/data/Wine.json#WineType> .
+<https://dbpedia.org/data/Wine.json#HighQualityWine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#withRestrictions> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid4 .
+_:genid4 <http://www.w3.org/2001/XMLSchema#minInclusive> "400"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/2002/07/owl#onDatatype> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/data/Wine.json#price> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://dbpedia.org/data/Wine.json#HighQualityWine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid5 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "4"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/data/Wine.json#rating> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://dbpedia.org/data/Wine.json#LowQualityWine
+<https://dbpedia.org/data/Wine.json#LowQualityWine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://dbpedia.org/data/Wine.json#LowQualityWine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://dbpedia.org/data/Wine.json#WineType> .
+<https://dbpedia.org/data/Wine.json#LowQualityWine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#withRestrictions> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid9 .
+_:genid9 <http://www.w3.org/2001/XMLSchema#maxExclusive> "400"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/2002/07/owl#onDatatype> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/data/Wine.json#price> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://dbpedia.org/data/Wine.json#LowQualityWine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid10 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "3"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/data/Wine.json#rating> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://dbpedia.org/data/Wine.json#Rating
+<https://dbpedia.org/data/Wine.json#Rating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://dbpedia.org/data/Wine.json#Region
+<https://dbpedia.org/data/Wine.json#Region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://dbpedia.org/data/Wine.json#Review
+<https://dbpedia.org/data/Wine.json#Review> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://dbpedia.org/data/Wine.json#Wine
+<https://dbpedia.org/data/Wine.json#Wine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://dbpedia.org/data/Wine.json#Wine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <https://dbpedia.org/data/Wine.json#Region> .
+_:genid11 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/data/Wine.json#region> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://dbpedia.org/data/Wine.json#Wine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#onClass> <https://dbpedia.org/data/Wine.json#Winery> .
+_:genid12 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/data/Wine.json#winery> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://dbpedia.org/data/Wine.json#WineType
+<https://dbpedia.org/data/Wine.json#WineType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://dbpedia.org/data/Wine.json#WineType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://dbpedia.org/data/Wine.json#Wine> .
+# 
+# https://dbpedia.org/data/Wine.json#Winery
+<https://dbpedia.org/data/Wine.json#Winery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://dbpedia.org/data/Wine.json#Alvaro_Palacios
+<https://dbpedia.org/data/Wine.json#Alvaro_Palacios> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Castillo_Ygay_Gran_Reserva_Especial_Blanco
+<https://dbpedia.org/data/Wine.json#Castillo_Ygay_Gran_Reserva_Especial_Blanco> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Espana
+<https://dbpedia.org/data/Wine.json#Espana> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dbpedia.org/data/Wine.json#Espana> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://dbpedia.org/data/Wine.json#Region> .
+# 
+# https://dbpedia.org/data/Wine.json#Pingus
+<https://dbpedia.org/data/Wine.json#Pingus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Priorat_Red
+<https://dbpedia.org/data/Wine.json#Priorat_Red> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Priorato
+<https://dbpedia.org/data/Wine.json#Priorato> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Ribera_Del_Duero_Red
+<https://dbpedia.org/data/Wine.json#Ribera_Del_Duero_Red> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Rioja
+<https://dbpedia.org/data/Wine.json#Rioja> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Toro_Red
+<https://dbpedia.org/data/Wine.json#Toro_Red> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dbpedia.org/data/Wine.json#Toro_Red> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://dbpedia.org/data/Wine.json#Winery> .
+# 
+# https://dbpedia.org/data/Wine.json#Unico
+<https://dbpedia.org/data/Wine.json#Unico> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion
+<https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion> <https://dbpedia.org/data/Wine.json#region> <https://dbpedia.org/data/Wine.json#Espana> .
+<https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion> <https://dbpedia.org/data/Wine.json#winery> <https://dbpedia.org/data/Wine.json#Toro_Red> .
+<https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion> <https://dbpedia.org/data/Wine.json#price> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion> <https://dbpedia.org/data/Wine.json#rating> "2"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# https://dbpedia.org/data/Wine.json#Vega_Sicilia
+<https://dbpedia.org/data/Wine.json#Vega_Sicilia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Vino_Tinto
+<https://dbpedia.org/data/Wine.json#Vino_Tinto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#Vino_de_Espana
+<https://dbpedia.org/data/Wine.json#Vino_de_Espana> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#185
+<https://dbpedia.org/data/Wine.json#185> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#1982
+<https://dbpedia.org/data/Wine.json#1982> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#527.26
+<https://dbpedia.org/data/Wine.json#527.26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat
+<https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat> <https://dbpedia.org/data/Wine.json#region> <https://dbpedia.org/data/Wine.json#Espana> .
+<https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat> <https://dbpedia.org/data/Wine.json#winery> <https://dbpedia.org/data/Wine.json#Toro_Red> .
+<https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat> <https://dbpedia.org/data/Wine.json#price> "450.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://dbpedia.org/data/Wine.json#L'Ermita_Velles_Vinyes_Priorat> <https://dbpedia.org/data/Wine.json#rating> "5.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

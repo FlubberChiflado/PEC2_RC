@@ -1,0 +1,407 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/fcron/ontology/spanish_wine_quality#"
+     xml:base="http://www.semanticweb.org/fcron/ontology/spanish_wine_quality"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:Wine="https://dbpedia.org/data/Wine.json#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/fcron/ontology/spanish_wine_quality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#rating -->
+
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/data/Wine.json#rating">
+        <rdfs:domain rdf:resource="https://dbpedia.org/data/Wine.json#Wine"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/data/Wine.json#Rating"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#region -->
+
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/data/Wine.json#region">
+        <rdfs:domain rdf:resource="https://dbpedia.org/data/Wine.json#Wine"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/data/Wine.json#Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#review -->
+
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/data/Wine.json#review"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#winery -->
+
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/data/Wine.json#winery"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#bodyScore -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/data/Wine.json#bodyScore"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#countReview -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/data/Wine.json#countReview"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#name -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/data/Wine.json#name"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#price -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/data/Wine.json#price">
+        <rdfs:domain rdf:resource="https://dbpedia.org/data/Wine.json#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#rating -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/data/Wine.json#rating">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#year -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/data/Wine.json#year"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#HighQualityWine -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#HighQualityWine">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/data/Wine.json#WineType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/data/Wine.json#price"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/data/Wine.json#rating"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#LowQualityWine -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#LowQualityWine">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/data/Wine.json#WineType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/data/Wine.json#price"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/data/Wine.json#rating"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Rating -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#Rating"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Region -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#Region"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Review -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#Review"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Wine -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#Wine">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/data/Wine.json#region"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://dbpedia.org/data/Wine.json#Region"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/data/Wine.json#winery"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://dbpedia.org/data/Wine.json#Winery"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#WineType -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#WineType">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/data/Wine.json#Wine"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Winery -->
+
+
+    <owl:Class rdf:about="https://dbpedia.org/data/Wine.json#Winery"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Alvaro_Palacios -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Alvaro_Palacios"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Castillo_Ygay_Gran_Reserva_Especial_Blanco -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Castillo_Ygay_Gran_Reserva_Especial_Blanco"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Espana -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Espana">
+        <rdf:type rdf:resource="https://dbpedia.org/data/Wine.json#Region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Pingus -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Pingus"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Priorat_Red -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Priorat_Red"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Priorato -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Priorato"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Ribera_Del_Duero_Red -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Ribera_Del_Duero_Red"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Rioja -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Rioja"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Toro_Red -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Toro_Red">
+        <rdf:type rdf:resource="https://dbpedia.org/data/Wine.json#Winery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Unico -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Unico"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Unico_Reserva_Especial_Edicion">
+        <Wine:region rdf:resource="https://dbpedia.org/data/Wine.json#Espana"/>
+        <Wine:winery rdf:resource="https://dbpedia.org/data/Wine.json#Toro_Red"/>
+        <Wine:price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</Wine:price>
+        <Wine:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</Wine:rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Vega_Sicilia -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Vega_Sicilia"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Vino_Tinto -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Vino_Tinto"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#Vino_de_Espana -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#Vino_de_Espana"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#185 -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#185"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#1982 -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#1982"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#527.26 -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#527.26"/>
+    
+
+
+    <!-- https://dbpedia.org/data/Wine.json#L&apos;Ermita_Velles_Vinyes_Priorat -->
+
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/data/Wine.json#L&apos;Ermita_Velles_Vinyes_Priorat">
+        <Wine:region rdf:resource="https://dbpedia.org/data/Wine.json#Espana"/>
+        <Wine:winery rdf:resource="https://dbpedia.org/data/Wine.json#Toro_Red"/>
+        <Wine:price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">450.0</Wine:price>
+        <Wine:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</Wine:rating>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

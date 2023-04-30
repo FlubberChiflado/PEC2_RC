@@ -1,0 +1,350 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://dbpedia.org/data/Wine.json" ],
+    "iri" : "http://www.semanticweb.org/fcron/ontology/spanish_wine_quality"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "1",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "3",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "1",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#WineType",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WineType"
+    },
+    "subClasses" : [ "6", "7" ],
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#LowQualityWine",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LowQualityWine"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#Region",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Region"
+    },
+    "individuals" : [ {
+      "iri" : "https://dbpedia.org/data/Wine.json#Espana",
+      "baseIri" : "https://dbpedia.org/data/Wine.json",
+      "labels" : {
+        "IRI-based" : "Espana"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#Wine",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Wine"
+    },
+    "subClasses" : [ "4" ],
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#Winery",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Winery"
+    },
+    "individuals" : [ {
+      "iri" : "https://dbpedia.org/data/Wine.json#Toro_Red",
+      "baseIri" : "https://dbpedia.org/data/Wine.json",
+      "labels" : {
+        "IRI-based" : "Toro_Red"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#HighQualityWine",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HighQualityWine"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#Rating",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Rating"
+    },
+    "attributes" : [ "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#Review",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Review"
+    },
+    "attributes" : [ "external" ],
+    "id" : "26"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://dbpedia.org/data/Wine.json#name",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "name"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "0"
+  }, {
+    "range" : "4",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "11"
+  }, {
+    "range" : "4",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#winery",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "winery"
+    },
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#bodyScore",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "bodyScore"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#region",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "region"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#countReview",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "countReview"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#rating",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "rating"
+    },
+    "maxCardinality" : "3",
+    "minCardinality" : "4",
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#year",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "year"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#price",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "price"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://dbpedia.org/data/Wine.json#review",
+    "baseIri" : "https://dbpedia.org/data/Wine.json",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "review"
+    },
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "25"
+  }, {
+    "range" : "5",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  } ]
+}
